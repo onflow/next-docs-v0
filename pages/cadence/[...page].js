@@ -4,8 +4,6 @@ import hydrate from "next-mdx-remote/hydrate";
 import renderToString from "next-mdx-remote/render-to-string";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import path from "path";
-import octokit from "../../lib/octokit";
 import VSCodeFlow from "../../lib/remark-vscode-flow";
 
 const components = {
@@ -35,18 +33,14 @@ export default function PostPage({ source, frontMatter }) {
 }
 
 export const getStaticProps = async ({ params }) => {
+  const json = require("../../lib/git-content-source/cadence-docs.json");
+  const content = JSON.parse(JSON.stringify(json));
+
   const source = "# Hello There";
 
-  const response = await octokit.request("GET /orgs/{org}/repos", {
-    org: "onflow",
-    type: "public",
-  });
+  const { content: mdContent, data } = matter(source);
 
-  console.log(response);
-
-  const { content, data } = matter(source);
-
-  const mdxSource = await renderToString(content, {
+  const mdxSource = await renderToString(mdContent, {
     components,
     mdxOptions: {
       remarkPlugins: [VSCodeFlow],
@@ -63,14 +57,23 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const paths = [
-    {
-      params: { page: "hello" },
-    },
-  ];
+  const json = require("../../lib/git-content-source/cadence-docs.json");
+  const content = JSON.parse(JSON.stringify(json));
+
+  const languagePages = content.language.map((p) => {
+    return {
+      params: { page: p.path.split("/") },
+    };
+  });
+
+  const rootPages = content.root.map((p) => {
+    return {
+      params: { page: p.path.split("/") },
+    };
+  });
 
   return {
-    paths,
+    paths: [...rootPages, ...languagePages],
     fallback: false,
   };
 };
