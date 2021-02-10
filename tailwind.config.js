@@ -1,16 +1,18 @@
-const colors = require('tailwindcss/colors')
+const defaultTheme = require("tailwindcss/defaultTheme");
+const colors = require("tailwindcss/colors");
 
 module.exports = {
-  darkMode: 'class',
+  darkMode: "class",
+  important: "#app",
   theme: {
+    ...defaultTheme,
     extend: {
       colors,
     },
   },
-  variants: {},
-  plugins: [],
-  // xwind options
+  plugins: [require("@tailwindcss/typography"), require("@tailwindcss/ui")],
   xwind: {
-    mode: 'objectstyles',
+    mode: "objectstyles",
   },
-}
+  purge: ["./components/**/*.{js}", "./pages/**/*.{js}", "./layouts/**/*.{js}"],
+};

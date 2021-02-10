@@ -1,0 +1,15 @@
+/* tailwindcss-typography overrides */
+
+pre {
+  background-color: whitesmoke !important;
+}
+
+code {
+  display:inline-block;
+  padding: 0 0.2rem;
+  background-color: whitesmoke !important;
+}
+
+code::before, code::after {
+  content: '' !important;
+}

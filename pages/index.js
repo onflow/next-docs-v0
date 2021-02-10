@@ -1,14 +1,10 @@
-import xw from 'xwind'
-import ButtonReact from '../components/ButtonReact'
-import ButtonStyled from '../components/ButtonStyled'
+import xw from "xwind";
+import Layout from "../layouts";
 
 const Index = () => (
-  <div css={xw`grid justify-center items-center h-screen space-y-20`}>
-    <div css={xw`space-y-20`}>
-      <ButtonReact>@emotion/react</ButtonReact>
-      <ButtonStyled>@emotion/styled</ButtonStyled>
-    </div>
-  </div>
-)
+  <Layout>
+    <h1 css={xw`space-y-20 col-start-6 col-end-9`}>Hello Docs</h1>
+  </Layout>
+);
 
-export default Index
+export default Index;
