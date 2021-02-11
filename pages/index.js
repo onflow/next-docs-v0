@@ -1,5 +1,5 @@
 import xw from "xwind";
-import Layout from "../layouts";
+import Layout from "../layouts/markdown-page";
 
 const Index = () => (
   <Layout>
