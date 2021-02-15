@@ -32,6 +32,10 @@ function App({ Component, pageProps }) {
           content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, user-scalable=no, viewport-fit=cover"
         />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
+        <link
+          rel="stylesheet"
+          href="https://overpass-30e2.kxcdn.com/overpass.css"
+        ></link>
       </Head>
       <ThemeProvider>
         <Component {...pageProps} />

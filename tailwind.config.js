@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       colors,
       fontFamily: {
+        display: ["Overpass", "sans-serif"],
         body: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
@@ -25,6 +26,21 @@ module.exports = {
             },
             strong: {
               color: theme("colors.gray.900"),
+            },
+            h1: {
+              color: theme("colors.gray.900"),
+            },
+            h2: {
+              color: theme("colors.gray.900"),
+            },
+            h3: {
+              color: theme("colors.gray.900"),
+            },
+            h4: {
+              color: theme("colors.gray.900"),
+            },
+            "figure figcaption": {
+              color: theme("colors.gray.400"),
             },
           },
         },
