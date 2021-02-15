@@ -1,9 +1,9 @@
 import xw from "xwind";
-import Layout from "../layouts/markdown-page";
+import Layout from "../layouts/default";
 
 const Index = () => (
   <Layout>
-    <h1 css={xw`space-y-20 col-start-6 col-end-9`}>Hello Docs</h1>
+    <h1 css={xw``}>Hello Docs?</h1>
   </Layout>
 );
 

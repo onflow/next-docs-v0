@@ -8,9 +8,9 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en" className="dark">
+      <Html lang="en">
         <Head>
-          {/* <meta name="application-name" content="Flow Documentation" />
+          <meta name="application-name" content="Flow Documentation" />
           <meta name="apple-mobile-web-app-capable" content="yes" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
@@ -24,7 +24,7 @@ class MyDocument extends Document {
           <meta name="mobile-web-app-capable" content="yes" />
           <meta
             name="msapplication-config"
-            content="/icons/browserconfig.xml"
+            content="/meta-icons/browserconfig.xml"
           />
           <meta name="msapplication-TileColor" content="#2B5797" />
           <meta name="msapplication-tap-highlight" content="no" />
@@ -33,19 +33,19 @@ class MyDocument extends Document {
           <link
             rel="apple-touch-icon"
             sizes="180x180"
-            href="/icons/apple-touch-icon.png"
+            href="/meta-icons/apple-touch-icon.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="32x32"
-            href="/icons/favicon-32x32.png"
+            href="/meta-icons/favicon-32x32.png"
           />
           <link
             rel="icon"
             type="image/png"
             sizes="16x16"
-            href="/icons/favicon-16x16.png"
+            href="/meta-icons/favicon-16x16.png"
           />
           <link
             rel="manifest"
@@ -53,7 +53,7 @@ class MyDocument extends Document {
 "
           />
           <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5" />
-          <link rel="shortcut icon" href="/icons/favicon.ico" /> */}
+          <link rel="shortcut icon" href="/meta-icons/favicon.ico" />
         </Head>
         <body>
           <Main />

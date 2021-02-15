@@ -1,5 +1,3 @@
-const path = require("path");
-
 const withPlugins = require("next-compose-plugins");
 
 const withPWA = require("next-pwa")({
@@ -9,16 +7,6 @@ const withPWA = require("next-pwa")({
     dest: "public",
   },
 });
-
-// const withMDX = require("next-mdx-enhanced")({
-//   layoutPath: "layouts",
-//   defaultLayout: true,
-//   fileExtensions: ["mdx", "md"],
-//   remarkPlugins: [require(path.resolve(__dirname, "./lib/remark-vscode-flow"))],
-//   rehypePlugins: [],
-//   usesSrc: false,
-//   reExportDataFetching: false,
-// });
 
 const config = {
   async rewrites() {

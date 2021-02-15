@@ -1,35 +1,17 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
 const colors = require("tailwindcss/colors");
 
-const disabledCss = {
-  "code::before": false,
-  "code::after": false,
-  "blockquote p:first-of-type::before": false,
-  "blockquote p:last-of-type::after": false,
-  pre: false,
-  code: false,
-  "pre code": false,
-};
-
 module.exports = {
   darkMode: "class",
-  purge: {
-    mode: "all",
-    content: ["./**/*.js"],
-  },
   theme: {
     extend: {
       colors,
       fontFamily: {
-        sans: ["Inter var", ...defaultTheme.fontFamily.sans],
+        body: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
       typography: (theme) => ({
-        DEFAULT: { css: disabledCss },
         override: {
           css: {
-            ul: {
-              listStyleType: "none",
-            },
             pre: {
               backgroundColor: theme("colors.gray.100"),
             },
@@ -40,6 +22,9 @@ module.exports = {
               "&:before, &:after": {
                 display: "none",
               },
+            },
+            strong: {
+              color: theme("colors.gray.900"),
             },
           },
         },
@@ -54,7 +39,7 @@ module.exports = {
                 color: theme("colors.white"),
               },
               strong: {
-                color: theme("colors.white"),
+                color: theme("colors.gray.100"),
               },
               "ol > li::before": {
                 color: theme("colors.gray.400"),
@@ -99,10 +84,10 @@ module.exports = {
   },
   variants: {
     extend: {
-      typography: ["dark", "override"],
+      typography: ["responsive", "dark"],
     },
   },
-  plugins: [require("@tailwindcss/ui")],
+  plugins: [require("@tailwindcss/typography")],
   xwind: {
     mode: "objectstyles",
   },

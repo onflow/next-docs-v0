@@ -4,6 +4,7 @@ import { Global } from "@emotion/react";
 import xw from "xwind";
 import { DefaultSeo } from "next-seo";
 
+import { ThemeProvider } from "../components/ThemeContext";
 import "../global.css";
 
 function App({ Component, pageProps }) {
@@ -32,7 +33,9 @@ function App({ Component, pageProps }) {
         />
         <link rel="stylesheet" href="https://rsms.me/inter/inter.css"></link>
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider>
+        <Component {...pageProps} />
+      </ThemeProvider>
     </>
   );
 }

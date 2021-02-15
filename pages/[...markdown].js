@@ -1,5 +1,4 @@
 import React from "react";
-import xw from "xwind";
 import hydrate from "next-mdx-remote/hydrate";
 import dynamic from "next/dynamic";
 
@@ -14,15 +13,7 @@ const components = {
 
 export default function MarkdownPage({ source }) {
   const content = hydrate(source, { components });
-  return (
-    <Layout>
-      <div
-        css={xw`overflow-auto prose-override dark[prose-override prose-light]`}
-      >
-        {content}
-      </div>
-    </Layout>
-  );
+  return <Layout>{content}</Layout>;
 }
 
 export const getStaticProps = async ({ params }) => {
