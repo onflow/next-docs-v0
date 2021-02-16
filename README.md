@@ -9,20 +9,6 @@ Experimenting with NextJS as a simpler alternative to Gatsby.
 3) `yarn get-content:cadence`
 4) `yarn dev`
 
-## Prism development
-This repo contains a link to PrismJS (Temporarily while we develop a syntax highlighter).
-
-To develop using Prism: 
-1) `git submodule update --init --recursive`
-2) `cd lib/prismjs && npm i && npm build`
-3) `npm run start`
-
-The syntax highlighting definition can be found here: `lib/prismjs/components/prism-cadence.js`
-
-Load `http://localhost:5000/test.html` and select `Cadence` as the highlighting option. 
-
-Update the definition file and refresh the browser to see the result.
-
 ### Rationale
 The current Gatsby site was bulit on top of an existing Gatsby theme and has inhereted much that is now hard to refactor or reconfigure. This rework is an attempt to acheve greater customizability, and faster iteration cycles, less code and an overall simpler design for the site, without sacrificing any features obtained by the previous Gatsby-based site. 
 
@@ -55,3 +41,17 @@ The current Gatsby site was bulit on top of an existing Gatsby theme and has inh
 - [x] Mobile-first PWA 
 - [ ] Prism syntax highlighting for Cadence
 - [ ] Offline support
+
+## Prism development
+This repo contains a link to PrismJS (Temporarily while we develop a syntax highlighter).
+
+To develop using Prism: 
+1) `git submodule update --init --recursive`
+2) `cd lib/prismjs && npm i && npm build`
+3) `npm run start`
+
+The syntax highlighting definition can be found here: `lib/prismjs/components/prism-cadence.js`
+
+Load `http://localhost:5000/test.html` and select `Cadence` as the highlighting option. 
+
+Update the definition file and refresh the browser to see the result.
