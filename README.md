@@ -9,6 +9,8 @@ Experimenting with NextJS as a simpler alternative to Gatsby.
 3) `yarn get-content:cadence`
 4) `yarn dev`
 
+You can now visit a page from the Cadence Github repo, try: `http://localhost:3000/cadence/language/accounts`
+
 ### Rationale
 The current Gatsby site was bulit on top of an existing Gatsby theme and has inhereted much that is now hard to refactor or reconfigure. This rework is an attempt to achieve greater customizability, and faster iteration cycles, less code and an overall simpler design for the site, without sacrificing any features obtained by the previous Gatsby-based site. 
 
