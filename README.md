@@ -24,7 +24,7 @@ The current Gatsby site was bulit on top of an existing Gatsby theme and has inh
 
 ### Gatsby Feature-Partity Checklist
 - [x] Render Markdown/MDX
-- [x] Import Markdown MDX content from Github
+- [x] Import Markdown/MDX content from Github
 - [x] Auto-link headers
 - [x] Static site generation
 - [ ] Breadcrumbs
