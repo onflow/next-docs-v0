@@ -49,8 +49,17 @@ This repo contains a link to PrismJS (Temporarily while we develop a syntax high
 
 To develop using Prism: 
 1) `git submodule update --init --recursive`
-2) `cd lib/prismjs && npm i && npm build`
-3) `npm run start`
+2) Add the following to `components.json` in `lib/prismjs` under `"languages"`: 
+```
+"cadence": {
+  "title": "Cadence",
+  "option": "default",
+  "owner": "onflow"
+},
+```
+3) Add `lib/prism-cadence.js` to `lib/prismjs/components`
+4) `cd lib/prismjs && npm i && npm build`
+5) `npm run start`
 
 The syntax highlighting definition can be found here: `lib/prismjs/components/prism-cadence.js`
 
