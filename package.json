@@ -6,10 +6,12 @@
     "build": "next build",
     "dev": "next dev",
     "refresh": "rm -rf .next/cache/next-babel-loader",
-    "start": "next start"
+    "start": "next start",
+    "get-content:cadence": "npx babel-node ./lib/git-source/fetchers/cadence"
   },
   "dependencies": {
     "@babel/core": "^7.12.13",
+    "@babel/node": "^7.12.16",
     "@emotion/babel-plugin": "11.0.0",
     "@emotion/babel-preset-css-prop": "^11.2.0",
     "@emotion/css": "^11.1.3",
