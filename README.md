@@ -3,7 +3,7 @@
 Experimenting with NextJS as a simpler alternative to Gatsby.
 
 ### Rationale
-The current Gatsby site was bulit on top of an existing Gatsby theme and has inhereted much that is now hard to refactor or reconfigure. This rework is an attempt to acheve greater customizability, and faster iteration cycles. 
+The current Gatsby site was bulit on top of an existing Gatsby theme and has inhereted much that is now hard to refactor or reconfigure. This rework is an attempt to acheve greater customizability, and faster iteration cycles, less code and an overall simpler design for the site, without sacrificing any features obtained by the previous Gatsby-based site. 
 
 **Less code/config**
 - Current (Gatsby) site configuration is spread between the main site config and the 'theme config', with no clear seperation. 
@@ -32,4 +32,5 @@ The current Gatsby site was bulit on top of an existing Gatsby theme and has inh
 - [x] Responsive typography
 - [x] Customizable theme
 - [x] Mobile-first PWA 
+- [ ] Prism syntax highlighting for Cadence
 - [ ] Offline support
