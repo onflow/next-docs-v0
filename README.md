@@ -36,6 +36,9 @@ The current Gatsby site was bulit on top of an existing Gatsby theme and has inh
 - [ ] GraphQL API (Not needed)
 
 ### Additional Features
+- [ ] Docs versioning
+- [ ] Bi-Directional Github updates
+- [ ] Dynamic SEO images
 - [x] Dark Mode
 - [x] Next Images (optimized images)
 - [x] Responsive typography
