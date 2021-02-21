@@ -2,8 +2,8 @@ import React from "react";
 import hydrate from "next-mdx-remote/hydrate";
 import dynamic from "next/dynamic";
 
-import generateGithubDocsPaths from "../lib/git-source/generatePaths";
-import generateMDContent from "../lib/git-source/getMarkdown";
+import generateGithubDocsPaths from "../lib/generatePaths";
+import generateMDContent from "../lib/getMarkdown";
 
 import Layout from "../layouts/default";
 

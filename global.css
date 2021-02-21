@@ -2,6 +2,7 @@
 
 
 @layer base {
+
   h1, h2, h3, h4 {
     @apply font-display;
     @apply tracking-normal;
