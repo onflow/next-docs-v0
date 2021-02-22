@@ -1,11 +1,14 @@
-import React from "react";
-import Head from "next/head";
 import { Global } from "@emotion/react";
+
+import React from "react";
+
+import Head from "next/head";
+
 import xw from "xwind";
+
 import { DefaultSeo } from "next-seo";
 
 import { ThemeProvider } from "../components/ThemeContext";
-import "../global.css";
 
 function App({ Component, pageProps }) {
   return (

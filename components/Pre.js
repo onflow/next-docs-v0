@@ -1,8 +1,12 @@
 import styled from "@emotion/styled";
 
-import React from "react";
+import React, { useContext } from "react";
 
 import Highlight, { defaultProps } from "prism-react-renderer";
+import lightTheme from "prism-react-renderer/themes/duotoneLight";
+import darkTheme from "prism-react-renderer/themes/duotoneDark";
+
+import { ThemeContext } from "./ThemeContext";
 
 export const Wrapper = styled.div`
   font-family: sans-serif;
@@ -13,7 +17,7 @@ export const Pre = styled.pre`
   text-align: left;
   margin: 1em 0;
   padding: 0.5em;
-  overflow: scroll;
+  overflow: auto;
 
   & .token-line {
     line-height: 1.3em;
@@ -39,11 +43,15 @@ export const LineContent = styled.span`
 
 const CodeFence = ({ children, className }) => {
   const language = children.props.className?.replace(/language-/, "") || "";
+
+  const { theme: UITheme } = useContext(ThemeContext);
+
   return (
     <Highlight
       {...defaultProps}
       code={children.props.children}
       language={language}
+      theme={UITheme === "dark" ? darkTheme : lightTheme}
     >
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <Pre className={className} style={style}>
