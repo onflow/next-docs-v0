@@ -1,6 +1,7 @@
 import React from "react";
 import hydrate from "next-mdx-remote/hydrate";
 import dynamic from "next/dynamic";
+import xw from "xwind";
 
 import generateGithubDocsPaths from "../lib/generatePaths";
 import generateMDContent from "../lib/getMarkdown";
@@ -11,9 +12,14 @@ const components = {
   pre: dynamic(() => import("../components/Pre")),
 };
 
-export default function MarkdownPage({ source }) {
+export default function MarkdownPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
-  return <Layout>{content}</Layout>;
+  return (
+    <Layout>
+      <h1 css={xw`pt-12`}>{frontMatter.title || ""}</h1>
+      {content}
+    </Layout>
+  );
 }
 
 export const getStaticProps = async ({ params }) => {

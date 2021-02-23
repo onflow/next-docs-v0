@@ -8,6 +8,7 @@ import xw from "xwind";
 
 import { DefaultSeo } from "next-seo";
 
+import "../global.css";
 import { ThemeProvider } from "../components/ThemeContext";
 
 function App({ Component, pageProps }) {
