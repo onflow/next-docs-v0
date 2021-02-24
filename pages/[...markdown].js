@@ -7,8 +7,10 @@ import generateGithubDocsPaths from "../lib/generatePaths";
 import generateMDContent from "../lib/getMarkdown";
 
 import Layout from "../layouts/default";
+import Callout from "../components/Callout";
 
 const components = {
+  Callout,
   pre: dynamic(() => import("../components/Pre")),
 };
 

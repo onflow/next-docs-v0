@@ -42,7 +42,8 @@ export const LineContent = styled.span`
 `;
 
 const CodeFence = ({ children, className }) => {
-  const language = children.props.className?.replace(/language-/, "") || "";
+  const language =
+    children.props.className?.replace(/language-/, "") || "language-javascript";
 
   const { theme: UITheme } = useContext(ThemeContext);
 
