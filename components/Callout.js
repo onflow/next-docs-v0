@@ -11,7 +11,7 @@ import xw from "xwind";
 function calloutStyles(type) {
   switch (type) {
     case "warning":
-      return xw` bg-amber-50 border border-l-8 border-amber-300 dark[bg-amber-700 text-white border-amber-900]`;
+      return xw` bg-amber-50 border border-l-8 border-amber-300 dark[bg-yellow-600 text-white border-yellow-800]`;
     case "info":
       return xw` bg-blue-50 border border-l-8 border-blue-300 dark[bg-lightBlue-700 text-white border-lightBlue-900]`;
     case "danger":
