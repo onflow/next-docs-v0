@@ -1,12 +1,8 @@
-import React from "react";
 import styled from "@emotion/styled";
-import xw from "xwind";
 
-// const calloutColors = {
-//   warning: { light: colors.yellow.lightest, dark: colors.yellow.dark },
-//   info: { light: colors.blue.lightest, dark: colors.blue.dark },
-//   danger: { light: colors.red.lightest, dark: colors.red.dark },
-//   success: { light: colors.green.lightest, dark: colors.green.dark },
+import React from "react";
+
+import xw from "xwind";
 
 function calloutStyles(type) {
   switch (type) {
@@ -19,6 +15,7 @@ function calloutStyles(type) {
     case "success":
       return xw` bg-green-50 border border-l-8 border-green-300 dark[bg-green-700 text-white border-green-900]`;
     default:
+      return xw``;
   }
 }
 
