@@ -37,7 +37,7 @@ The current Gatsby site was bulit on top of an existing Gatsby theme and has inh
 
 ### Additional Features
 - [ ] Docs versioning
-- [ ] Bi-Directional Github updates
+- [x] Bi-Directional Github updates
 - [ ] Dynamic SEO images
 - [x] Dark Mode
 - [x] Next Images (optimized images)
