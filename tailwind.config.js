@@ -6,6 +6,9 @@ module.exports = {
   theme: {
     extend: {
       colors,
+      gridTemplateRows: (theme) => ({
+        sidebar: `${theme("spacing.16")} auto ${theme("spacing.16")}`,
+      }),
       fontFamily: {
         display: ["Overpass", "sans-serif"],
         body: ["Inter var", ...defaultTheme.fontFamily.sans],

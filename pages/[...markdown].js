@@ -1,13 +1,15 @@
 import React from "react";
+
 import hydrate from "next-mdx-remote/hydrate";
+
 import dynamic from "next/dynamic";
+
 import xw from "xwind";
 
+import { layoutFor } from "../layouts";
+import Callout from "../components/Callout";
 import generateGithubDocsPaths from "../lib/generatePaths";
 import generateMDContent from "../lib/getMarkdown";
-
-import Layout from "../layouts/default";
-import Callout from "../components/Callout";
 
 const components = {
   Callout,
@@ -16,6 +18,7 @@ const components = {
 
 export default function MarkdownPage({ source, frontMatter }) {
   const content = hydrate(source, { components });
+  const Layout = layoutFor(frontMatter.type);
   return (
     <Layout>
       <h1 css={xw`pt-12`}>{frontMatter.title || ""}</h1>
