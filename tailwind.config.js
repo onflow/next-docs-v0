@@ -6,10 +6,21 @@ module.exports = {
   theme: {
     extend: {
       colors,
+      gridTemplateRows: (theme) => ({
+        sidebar: `${theme("spacing.16")} auto ${theme("spacing.16")}`,
+      }),
       fontFamily: {
         display: ["Overpass", "sans-serif"],
         body: ["Inter var", ...defaultTheme.fontFamily.sans],
       },
+      spacing: (theme) => ({
+        aside: "18rem",
+        main: "calc(-18rem + 100vw)",
+        header: "9rem",
+      }),
+      height: (theme) => ({
+        header: "9rem",
+      }),
       typography: (theme) => ({
         override: {
           css: {
@@ -42,15 +53,12 @@ module.exports = {
             h4: {
               color: theme("colors.gray.900"),
             },
-            "figure figcaption": {
-              color: theme("colors.gray.400"),
-            },
           },
         },
         light: {
           css: [
             {
-              color: theme("colors.gray.400"),
+              color: theme("colors.gray.300"),
               '[class~="lead"]': {
                 color: theme("colors.gray.300"),
               },
@@ -69,10 +77,6 @@ module.exports = {
               hr: {
                 borderColor: theme("colors.gray.200"),
               },
-              blockquote: {
-                color: theme("colors.gray.200"),
-                borderLeftColor: theme("colors.gray.600"),
-              },
               h1: {
                 color: theme("colors.white"),
               },
@@ -85,16 +89,6 @@ module.exports = {
               h4: {
                 color: theme("colors.white"),
               },
-              "figure figcaption": {
-                color: theme("colors.gray.400"),
-              },
-              thead: {
-                color: theme("colors.white"),
-                borderBottomColor: theme("colors.gray.400"),
-              },
-              "tbody tr": {
-                borderBottomColor: theme("colors.gray.600"),
-              },
             },
           ],
         },
@@ -103,10 +97,15 @@ module.exports = {
   },
   variants: {
     extend: {
+      display: ["group-hover"],
       typography: ["responsive", "dark"],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    require("@tailwindcss/line-clamp"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
   xwind: {
     mode: "objectstyles",
   },

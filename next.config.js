@@ -14,4 +14,6 @@ const config = {
   },
 };
 
-module.exports = withPlugins([withPWA]);
+module.exports = withPlugins([withPWA], {
+  future: { webpack5: true },
+});
