@@ -2,7 +2,7 @@ import xw from "xwind";
 
 import { FaDiscord, FaTwitter, FaDiscourse } from "react-icons/fa";
 
-import { Logo } from "../components/Logo";
+import { Logo } from "./Logo";
 
 const Sidebar = (props) => {
   return (
