@@ -4,7 +4,7 @@ import { FaDiscord, FaTwitter, FaDiscourse } from "react-icons/fa";
 
 import { Logo } from "./Logo";
 
-const Sidebar = (props) => {
+const LeftNav = (props) => {
   return (
     <nav
       css={xw`grid grid-flow-col grid-rows-sidebar grid-cols-1 pl-10 bg-gray-50 dark:bg-black w-aside sticky overflow-hidden`}
@@ -24,4 +24,4 @@ const Sidebar = (props) => {
   );
 };
 
-export default Sidebar;
+export default LeftNav;
