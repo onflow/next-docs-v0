@@ -1,0 +1,15 @@
+[submodule "cadence"]
+	path = content/cadence
+	url = https://github.com/onflow/cadence.git
+
+[submodule "flow-go-sdk"]
+	path = content/flow-go-sdk
+	url = https://github.com/onflow/flow-go-sdk.git
+
+[submodule "flow-js-sdk"]
+	path = content/flow-js-sdk
+	url = https://github.com/onflow/flow-js-sdk.git
+
+[submodule "pages"]
+	path = content/pages
+	url = https://github.com/onflow/flow.git
