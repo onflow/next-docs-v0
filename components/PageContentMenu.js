@@ -1,6 +1,6 @@
 import xw from "xwind";
 
-const ContentsMenu = () => {
+const PageContentMenu = () => {
   return (
     <aside css={xw`flex-none w-64 dark:bg-gray-900 pt-48`}>
       <ul
@@ -25,4 +25,4 @@ const ContentsMenu = () => {
   );
 };
 
-export default ContentsMenu;
+export default PageContentMenu;

@@ -1,6 +1,6 @@
 import xw from "xwind";
 
-import ContentsMenu from "../components/ContentsMenu";
+import PageContentMenu from "../components/PageContentMenu";
 import Header from "../components/Header";
 import TopicMenu from "../components/TopicMenu";
 import Sidebar from "../components/Sidebar";
@@ -28,7 +28,7 @@ const Layout = ({ children }) => {
           >
             {children}
           </div>
-          <ContentsMenu />
+          <PageContentMenu />
         </div>
       </main>
     </div>
