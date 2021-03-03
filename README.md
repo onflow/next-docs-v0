@@ -5,8 +5,6 @@ Experimenting with NextJS as a simpler alternative to Gatsby.
 ## Up And Running
 
 1) Install deps: `yarn`
-2) `export GITHUB_ACCESS_TOKEN=[your token]`
-3) `yarn get-content:cadence`
 4) `yarn dev`
 
 You can now visit a page from the Cadence Github repo, try: `http://localhost:3000/cadence/language/accounts`
