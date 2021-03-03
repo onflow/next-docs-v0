@@ -8,10 +8,12 @@ import xw from "xwind";
 
 import { layoutFor } from "../layouts";
 import Callout from "../components/Callout";
+import Img from "../components/Img";
 import generateGithubDocsPaths from "../lib/generatePaths";
 import generateMDContent from "../lib/getMarkdown";
 
 const components = {
+  Img,
   Callout,
   pre: dynamic(() => import("../components/Pre")),
 };
