@@ -4,6 +4,10 @@ Experimenting with NextJS as a simpler alternative to Gatsby.
 
 ## Up And Running
 
+```
+git clone --recursive https://github.com/onflow/next-docs
+```
+
 1) Install deps: `yarn`
 4) `yarn dev`
 
