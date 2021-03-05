@@ -1,3 +1,4 @@
+
 import xw from "xwind";
 
 import CategoryMenu from "../components/CategoryMenu";
@@ -7,6 +8,8 @@ import PageContentMenu from "../components/PageContentMenu";
 import TopicMenu from "../components/TopicMenu";
 
 const Layout = ({ children, toc }) => {
+
+
   return (
     <div
       css={xw`flex text-sm md:text-base xl:text-lg font-light min-h-screen dark:bg-gray-900 overflow-hidden`}
@@ -18,13 +21,13 @@ const Layout = ({ children, toc }) => {
           <CategoryMenu />
         </Header>
 
-        <div css={xw`w-full flex h-screen overflow-auto`}>
+        <div css={xw`w-full grid grid-cols-2 h-screen overflow-auto pt-32 pl-10 pb-32`}>
           <div
-            css={xw`h-screen prose dark:prose-light prose-override font-thin`}
+            css={xw`h-screen prose max-w-none dark:prose-light prose-override font-thin`}
           >
-            {children}
+          {children}
           </div>
-          <div css={xw`absolute left-main`}>
+          <div css={xw`pt-20 pl-10`}>
             <PageContentMenu toc={toc} />
           </div>
         </div>

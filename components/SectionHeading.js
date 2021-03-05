@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+
 const SectionHeading = ({ children }) => {
   if (process.browser) {
     const { useIntersectionObserver } = require("react-use-observer");

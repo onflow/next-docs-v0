@@ -8,11 +8,11 @@ const MenuItem = ({ title, url }) => {
   );
 };
 
-const PageContentMenu = ({ toc }) => {
+const PageContentMenu = ({ toc, height }) => {
   return (
-    <aside css={xw`flex-none w-64 dark:bg-gray-900 pt-48`}>
+    <aside style={{ height }} css={xw`relative dark:bg-gray-900`}>
       <ul
-        css={xw`sticky text-sm flex flex-col space-y-2 border-l border-gray-100 dark[border-gray-800 text-white]`}
+        css={xw`fixed text-sm w-60 flex flex-col space-y-2 border-l border-gray-100 dark[border-gray-800 text-white]`}
       >
         {toc.map((heading) => {
           return (

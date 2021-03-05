@@ -26,7 +26,7 @@ export default function MarkdownPage({ source, frontMatter, toc }) {
 
   return (
     <Layout toc={toc}>
-      <h1 css={xw`pt-12`}>{frontMatter.title || ""}</h1>
+      <h1>{frontMatter.title || ""}</h1>
       {content}
     </Layout>
   );
