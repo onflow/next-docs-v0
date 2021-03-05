@@ -1,5 +1,7 @@
 import { useContext } from "react";
+
 import xw from "xwind";
+
 import { RiMoonLine, RiSunLine } from "react-icons/ri";
 
 import { ThemeContext } from "../components/ThemeContext";
@@ -11,7 +13,7 @@ const ThemeSelector = () => {
   return (
     <div css={xw`flex`}>
       <button
-        css={xw`pr-10 flex justify-center pl-10 h-full items-center`}
+        css={xw`flex justify-center h-full items-center`}
         type="button"
         onClick={() => setTheme(isDark ? "light" : "dark")}
       >

@@ -8,15 +8,12 @@ import ThemeSelector from "../components/ThemeSelector";
 const Layout = ({ children }) => {
   return (
     <div
-      css={xw`flex text-sm md:text-base xl:text-lg font-light min-h-screen dark:bg-gray-900 overflow-x-hidden`}
+      css={xw`flex text-sm md:text-base xl:text-lg font-light min-h-screen dark:bg-gray-900`}
     >
       <LeftNav />
-      <main css={xw`w-main overflow-x-hidden`}>
+      <main css={xw`w-main h-screen`}>
         <Header>
           <TopicMenu />
-          <div css={xw`absolute right-0 top-10`}>
-            <ThemeSelector />
-          </div>
         </Header>
         <div css={xw`w-full flex pt-16`}>{children}</div>
       </main>

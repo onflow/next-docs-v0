@@ -1,7 +1,10 @@
 import Reference from "./reference";
+import Default from './default';
 
 const layouts = {
-  default: Reference,
+  default: Default,
+  REF: Reference,
+  
 };
 
 export default layouts;

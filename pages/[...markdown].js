@@ -9,6 +9,7 @@ import xw from "xwind";
 import { layoutFor } from "../layouts";
 import Callout from "../components/Callout";
 import Img from "../components/Img";
+import SectionHeading from "../components/SectionHeading";
 import generateGithubDocsPaths from "../lib/generatePaths";
 import generateMDContent from "../lib/getMarkdown";
 
@@ -16,13 +17,15 @@ const components = {
   Img,
   Callout,
   pre: dynamic(() => import("../components/Pre")),
+  h2: SectionHeading,
 };
 
-export default function MarkdownPage({ source, frontMatter }) {
+export default function MarkdownPage({ source, frontMatter, toc }) {
   const content = hydrate(source, { components });
-  const Layout = layoutFor(frontMatter.type);
+  const Layout = layoutFor(frontMatter.contentType);
+
   return (
-    <Layout>
+    <Layout toc={toc}>
       <h1 css={xw`pt-12`}>{frontMatter.title || ""}</h1>
       {content}
     </Layout>
@@ -30,11 +33,12 @@ export default function MarkdownPage({ source, frontMatter }) {
 }
 
 export const getStaticProps = async ({ params }) => {
-  const { mdxSource, data } = await generateMDContent(params, components);
+  const { mdxSource, data, toc } = await generateMDContent(params, components);
   return {
     props: {
       source: mdxSource,
       frontMatter: data,
+      toc,
     },
   };
 };

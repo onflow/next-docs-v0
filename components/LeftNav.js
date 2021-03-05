@@ -3,6 +3,7 @@ import xw from "xwind";
 import { FaDiscord, FaTwitter, FaDiscourse } from "react-icons/fa";
 
 import { Logo } from "./Logo";
+import ThemeSelector from "../components/ThemeSelector";
 
 const LeftNav = (props) => {
   return (
@@ -15,6 +16,7 @@ const LeftNav = (props) => {
       <div css={xw`py-2`}>content</div>
       <div css={xw`flex flex-col font-semibold text-base dark:text-white h-20`}>
         <div css={xw`pb-10 text-lg flex space-x-2 w-full`}>
+          <ThemeSelector />
           <FaDiscord />
           <FaTwitter />
           <FaDiscourse />
