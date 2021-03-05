@@ -15,7 +15,13 @@ const PageContentMenu = ({ toc }) => {
         css={xw`sticky text-sm flex flex-col space-y-2 border-l border-gray-100 dark[border-gray-800 text-white]`}
       >
         {toc.map((heading) => {
-          return <MenuItem title={heading.title} url={heading.url} />;
+          return (
+            <MenuItem
+              key={heading.url}
+              title={heading.title}
+              url={heading.url}
+            />
+          );
         })}
       </ul>
     </aside>

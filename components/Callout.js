@@ -34,11 +34,11 @@ const CalloutBody = styled.div({
   ...xw``,
 });
 
-export default function Callout({ title, children }) {
+export default function Callout(props) {
   return (
-    <CalloutWrapper type={type}>
-      {title && <CalloutTitle>{title}</CalloutTitle>}
-      <CalloutBody>{children}</CalloutBody>
+    <CalloutWrapper type={props.type}>
+      {props.title && <CalloutTitle>{props.title}</CalloutTitle>}
+      <CalloutBody>{props.children}</CalloutBody>
     </CalloutWrapper>
   );
 }

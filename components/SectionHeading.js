@@ -1,26 +1,28 @@
-import { useIntersectionObserver } from "@asyarb/use-intersection-observer";
-
-import { useEffect, useRef } from "react";
+import { useEffect } from "react";
 
 const SectionHeading = ({ children }) => {
-  const ref = useRef();
+  if (process.browser) {
+    const { useIntersectionObserver } = require("react-use-observer");
+    const [ref, intersectionObserverEntry] = useIntersectionObserver({
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5,
+    });
 
-  // Get the visibility boolean directly from the hook:
-  const inView = useIntersectionObserver({
-    ref,
-    options: {
-      threshold: 0.25,
-      triggerOnce: true,
-    },
-  });
-
-  useEffect(() => {
-    if (inView) {
-      console.log("In View", children);
-    }
-  }, [inView]);
-
-  return <h2>{children}</h2>;
+    useEffect(() => {
+      console.log("In View", children[1]);
+    }, [intersectionObserverEntry]);
+    return (
+      // NOTE: a tags are inserted into h2 using remark-autolink-headings
+      // in lib/getMarkdown.js ... This might not be the best way to
+      // provide the id for these elements (They should match the sidebar links)
+      <h2 id={""} ref={ref}>
+        {children}
+      </h2>
+    );
+  } else {
+    return <h2>{children}</h2>;
+  }
 };
 
 export default SectionHeading;
