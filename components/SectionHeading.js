@@ -1,22 +1,25 @@
-import { useEffect } from "react";
-
+import { useEffect,useContext } from "react";
+import {PageContext} from './PageContext'
 
 const SectionHeading = ({ children }) => {
+  const { headingInView } = useContext(PageContext)
   if (process.browser) {
     const { useIntersectionObserver } = require("react-use-observer");
-    const [ref, intersectionObserverEntry] = useIntersectionObserver({
+    const [ref, entry] = useIntersectionObserver({
       root: null,
       rootMargin: "0px",
       threshold: 0.5,
     });
 
     useEffect(() => {
-      console.log("In View", children[1]);
-    }, [intersectionObserverEntry]);
+      if (entry.intersectionRatio > 0) {
+        headingInView(true, ref.current.id)
+      } else {
+        headingInView(false)
+      }
+    }, [entry.intersectionRatio]);
+
     return (
-      // NOTE: a tags are inserted into h2 using remark-autolink-headings
-      // in lib/getMarkdown.js ... This might not be the best way to
-      // provide the id for these elements (They should match the sidebar links)
       <h2 id={""} ref={ref}>
         {children}
       </h2>

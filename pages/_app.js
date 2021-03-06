@@ -10,6 +10,7 @@ import { DefaultSeo } from "next-seo";
 
 import "../global.css";
 import { ThemeProvider } from "../components/ThemeContext";
+import { PageContextProvider } from '../components/PageContext'
 
 function App({ Component, pageProps }) {
   return (
@@ -42,7 +43,9 @@ function App({ Component, pageProps }) {
         ></link>
       </Head>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <PageContextProvider>
+          <Component {...pageProps} />
+        </PageContextProvider>
       </ThemeProvider>
     </>
   );
