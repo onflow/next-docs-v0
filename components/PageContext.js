@@ -1,22 +1,19 @@
-import React, { createContext,useCallback} from "react";
+import React, { createContext, useCallback, useState } from "react";
 
 export const PageContext = createContext({});
 
-export const PageContextProvider = ({children }) => {
-
-  const headingInView = useCallback(
-    (inView, headingText) => {
-       if (inView) {
-        console.log(true, headingText)
-      } else {
-         console.log(false, headingText)
-      }
-    },
-    [],
-  )
+export const PageContextProvider = ({ children }) => {
+  const [currentHeading, setCurrentHeading] = useState("");
+  const headingInView = useCallback((inView, headingText) => {
+    if (inView) {
+      setCurrentHeading(headingText);
+    } else {
+      // console.log(false, headingText);
+    }
+  }, []);
 
   return (
-    <PageContext.Provider value={{ headingInView }}>
+    <PageContext.Provider value={{ headingInView, currentHeading }}>
       {children}
     </PageContext.Provider>
   );
