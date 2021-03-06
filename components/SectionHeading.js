@@ -10,6 +10,7 @@ const slugger = new GithubSlugger();
 const SectionHeading = ({ children: headingText }) => {
   const headingRef = useRef(null);
   const { headingInView } = useContext(PageContext);
+  slugger.reset();
   const slug = slugger.slug(headingText);
   return (
     <InView
