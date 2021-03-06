@@ -1,32 +1,18 @@
-import { useEffect,useContext } from "react";
+import { useContext, useRef } from "react";
 import {PageContext} from './PageContext'
+import { InView } from 'react-intersection-observer';
 
-const SectionHeading = ({ children }) => {
-  const { headingInView } = useContext(PageContext)
-  if (process.browser) {
-    const { useIntersectionObserver } = require("react-use-observer");
-    const [ref, entry] = useIntersectionObserver({
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    });
-
-    useEffect(() => {
-      if (entry.intersectionRatio > 0) {
-        headingInView(true, ref.current.id)
-      } else {
-        headingInView(false)
-      }
-    }, [entry.intersectionRatio]);
-
+const SectionHeading = ({ children: headingText }) => {
+  const headingRef = useRef(null)
+  const { headingInView} = useContext(PageContext)
     return (
-      <h2 id={""} ref={ref}>
-        {children}
-      </h2>
+      <InView as="div" onChange={(inView) => headingInView(inView, headingText)}>
+        <h2 ref={headingRef}>
+          {headingText}
+        </h2>
+      </InView>
     );
-  } else {
-    return <h2>{children}</h2>;
-  }
+
 };
 
 export default SectionHeading;

@@ -5,10 +5,14 @@ export const PageContext = createContext({});
 export const PageContextProvider = ({children }) => {
 
   const headingInView = useCallback(
-    (args) => {
-      console.log('??', args)
+    (inView, headingText) => {
+       if (inView) {
+        console.log(true, headingText)
+      } else {
+         console.log(false, headingText)
+      }
     },
-    [headingInView],
+    [],
   )
 
   return (
