@@ -10,7 +10,7 @@ import { layoutFor } from "../layouts";
 import Callout from "../components/Callout";
 import Img from "../components/Img";
 import SectionHeading from "../components/SectionHeading";
-import generateGithubDocsPaths from "../lib/generatePaths";
+import generateContentPaths from "../lib/generatePaths";
 import generateMDContent from "../lib/getMarkdown";
 
 const components = {
@@ -44,7 +44,7 @@ export const getStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-  const githubDocsPaths = generateGithubDocsPaths();
+  const githubDocsPaths = generateContentPaths();
   return {
     paths: [...githubDocsPaths],
     fallback: false,

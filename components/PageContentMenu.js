@@ -2,9 +2,7 @@ import xw from "xwind";
 
 import { AnimateSharedLayout, motion } from "framer-motion";
 
-import { useContext } from "react";
-
-import { PageContext } from "./PageContext";
+import { usePageContext } from "./PageContext";
 
 const MenuItem = ({ title, url, active }) => {
   return (
@@ -24,13 +22,16 @@ const MenuItem = ({ title, url, active }) => {
   );
 };
 
-const PageContentMenu = ({ toc }) => {
-  const { currentHeading } = useContext(PageContext);
+const PageContentMenu = ({ menuName, toc }) => {
+  const { currentHeading } = usePageContext();
   return (
-    <aside css={xw`relative dark:bg-gray-900`}>
+    <aside css={xw`fixed dark:bg-gray-900`}>
       <AnimateSharedLayout>
+        <h2 css={xw`tracking-wide font-semibold pb-2 dark[text-white]`}>
+          {menuName || "Contents"}
+        </h2>
         <ul
-          css={xw`fixed text-sm w-60 flex flex-col space-y-2 dark[text-white] border-l`}
+          css={xw`text-sm w-60 flex flex-col space-y-2 dark[text-white] border-l dark[border-gray-800]`}
         >
           {toc.map((heading) => {
             return (

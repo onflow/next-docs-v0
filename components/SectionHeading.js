@@ -1,15 +1,15 @@
-import { useContext, useRef } from "react";
+import { useRef } from "react";
 
 import { InView } from "react-intersection-observer";
 
 import GithubSlugger from "github-slugger";
 
-import { PageContext } from "./PageContext";
+import { usePageContext } from "./PageContext";
 const slugger = new GithubSlugger();
 
 const SectionHeading = ({ children: headingText }) => {
   const headingRef = useRef(null);
-  const { headingInView } = useContext(PageContext);
+  const { headingInView } = usePageContext();
   slugger.reset();
   const slug = slugger.slug(headingText);
   return (
